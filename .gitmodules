@@ -1,0 +1,3 @@
+[submodule "LFCategory_Framework"]
+	path = LFCategory_Framework
+	url = https://github.com/LaiFengiOS/LFCategory_Framework.git
