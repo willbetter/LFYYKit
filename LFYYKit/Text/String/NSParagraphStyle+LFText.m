@@ -20,11 +20,13 @@
     if (CTStyle == NULL) return nil;
     
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     CGFloat lineSpacing;
     if (CTParagraphStyleGetValueForSpecifier(CTStyle, kCTParagraphStyleSpecifierLineSpacing, sizeof(CGFloat), &lineSpacing)) {
         style.lineSpacing = lineSpacing;
     }
+#pragma clang diagnostic pop
     
     CGFloat paragraphSpacing;
     if (CTParagraphStyleGetValueForSpecifier(CTStyle, kCTParagraphStyleSpecifierParagraphSpacing, sizeof(CGFloat), &paragraphSpacing)) {
@@ -114,7 +116,10 @@
     int count = 0;
     
     CGFloat lineSpacing = self.lineSpacing;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     set[count].spec = kCTParagraphStyleSpecifierLineSpacing;
+#pragma clang diagnostic pop
     set[count].valueSize = sizeof(CGFloat);
     set[count].value = &lineSpacing;
     count++;
