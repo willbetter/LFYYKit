@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BFDED6066565B0A00857B9E82CA5343719EDD5AC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1EABB5C9CF132F99A10D7B698852FBFDFF2B53A4" : 9223372036854775807,
+    "BFDED6066565B0A00857B9E82CA5343719EDD5AC" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "374BEB6C-24C8-4782-9B70-747B01FD6193",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1EABB5C9CF132F99A10D7B698852FBFDFF2B53A4" : "LFYYKit\/LFCategory_Framework\/",
+    "BFDED6066565B0A00857B9E82CA5343719EDD5AC" : "LFYYKit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LFYYKit",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LFYYKit.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LaiFengiOS\/LFCategory_Framework.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1EABB5C9CF132F99A10D7B698852FBFDFF2B53A4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wangxiaoxiang\/LFYYKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BFDED6066565B0A00857B9E82CA5343719EDD5AC"
+    }
+  ]
+}
