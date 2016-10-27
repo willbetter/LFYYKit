@@ -85,7 +85,7 @@
 		C0CEA92D1DBDE35700738E6C /* LFThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CEA9291DBDE35700738E6C /* LFThreadSafeArray.m */; };
 		C0CEA92E1DBDE35700738E6C /* LFThreadSafeDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = C0CEA92A1DBDE35700738E6C /* LFThreadSafeDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0CEA92F1DBDE35700738E6C /* LFThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CEA92B1DBDE35700738E6C /* LFThreadSafeDictionary.m */; };
-		C0D1244F1DBF3F1D000BF530 /* LFCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D1244A1DBF3F0E000BF530 /* LFCategory.framework */; };
+		C0DC3F6F1DC1E8CC00EA0648 /* LFCategory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DC3F6E1DC1E8CC00EA0648 /* LFCategory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,27 +95,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C0CEA8821DBDE30900738E6C;
 			remoteInfo = LFYYKit;
-		};
-		C0D124491DBF3F0E000BF530 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CAE3410B1D814B7000AA66CC;
-			remoteInfo = LFCategory;
-		};
-		C0D1244B1DBF3F0E000BF530 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0E7234A1DB0DF7F00AAC57A;
-			remoteInfo = "LFCategory-Dynamic";
-		};
-		C0D1244D1DBF3F19000BF530 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CAE3410A1D814B7000AA66CC;
-			remoteInfo = LFCategory;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -185,7 +164,7 @@
 		C0CEA9291DBDE35700738E6C /* LFThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFThreadSafeArray.m; sourceTree = "<group>"; };
 		C0CEA92A1DBDE35700738E6C /* LFThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFThreadSafeDictionary.h; sourceTree = "<group>"; };
 		C0CEA92B1DBDE35700738E6C /* LFThreadSafeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFThreadSafeDictionary.m; sourceTree = "<group>"; };
-		C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LFCategory.xcodeproj; path = LFCategory_Framework/LFCategory.xcodeproj; sourceTree = "<group>"; };
+		C0DC3F6E1DC1E8CC00EA0648 /* LFCategory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LFCategory.framework; path = LFCategory_Framework/build/LFCategory.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0D1244F1DBF3F1D000BF530 /* LFCategory.framework in Frameworks */,
+				C0DC3F6F1DC1E8CC00EA0648 /* LFCategory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +182,7 @@
 		C0CEA8791DBDE30800738E6C = {
 			isa = PBXGroup;
 			children = (
-				C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */,
+				C0DC3F6E1DC1E8CC00EA0648 /* LFCategory.framework */,
 				C0CEA8851DBDE30900738E6C /* LFYYKit */,
 				C0CEA8841DBDE30900738E6C /* Products */,
 			);
@@ -328,15 +307,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C0D124441DBF3F0E000BF530 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C0D1244A1DBF3F0E000BF530 /* LFCategory.framework */,
-				C0D1244C1DBF3F0E000BF530 /* LFCategory.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -394,7 +364,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C0D1244E1DBF3F19000BF530 /* PBXTargetDependency */,
 			);
 			name = LFYYKit;
 			productName = LFYYKit;
@@ -432,12 +401,6 @@
 			mainGroup = C0CEA8791DBDE30800738E6C;
 			productRefGroup = C0CEA8841DBDE30900738E6C /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C0D124441DBF3F0E000BF530 /* Products */;
-					ProjectRef = C0D124431DBF3F0E000BF530 /* LFCategory.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C0CEA8821DBDE30900738E6C /* LFYYKit */,
@@ -445,23 +408,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C0D1244A1DBF3F0E000BF530 /* LFCategory.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LFCategory.framework;
-			remoteRef = C0D124491DBF3F0E000BF530 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C0D1244C1DBF3F0E000BF530 /* LFCategory.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LFCategory.framework;
-			remoteRef = C0D1244B1DBF3F0E000BF530 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C0CEA8811DBDE30900738E6C /* Resources */ = {
@@ -535,11 +481,6 @@
 			isa = PBXTargetDependency;
 			target = C0CEA8821DBDE30900738E6C /* LFYYKit */;
 			targetProxy = C0CEA9541DBDFC0D00738E6C /* PBXContainerItemProxy */;
-		};
-		C0D1244E1DBF3F19000BF530 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LFCategory;
-			targetProxy = C0D1244D1DBF3F19000BF530 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -649,6 +590,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LFCategory_Framework/build",
+				);
 				INFOPLIST_FILE = LFYYKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -669,6 +614,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LFCategory_Framework/build",
+				);
 				INFOPLIST_FILE = LFYYKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
