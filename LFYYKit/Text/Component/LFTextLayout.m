@@ -400,6 +400,9 @@ dispatch_semaphore_signal(_lock);
     NSRange visibleRange;
     NSUInteger maximumNumberOfRows = 0;
     
+    BOOL constraintSizeIsExtended = NO;
+    CGRect constraintRectBeforeExtended = {0};
+    
     text = text.mutableCopy;
     container = container.copy;
     if (!text || !container) return nil;
@@ -410,11 +413,18 @@ dispatch_semaphore_signal(_lock);
     // CoreText bug when draw joined emoji since iOS 8.3.
     // See -[NSMutableAttributedString setClearColorToJoinedEmoji] for more information.
     static BOOL needFixJoinedEmojiBug = NO;
+    // It may use larger constraint size when create CTFrame with
+    // CTFramesetterCreateFrame in iOS 10.
+    static BOOL needFixLayoutSizeBug = NO;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CGFloat systemVersionFloat = [UIDevice currentDevice].systemVersion.floatValue;
-        if (8.3 <= systemVersionFloat && systemVersionFloat < 9) {
+        CGFloat systemVersionDouble = [UIDevice currentDevice].systemVersion.doubleValue;
+        if (8.3 <= systemVersionDouble && systemVersionDouble < 9) {
             needFixJoinedEmojiBug = YES;
+        }
+        
+        if (systemVersionDouble >= 10) {
+            needFixLayoutSizeBug = YES;
         }
     });
     if (needFixJoinedEmojiBug) {
@@ -430,6 +440,16 @@ dispatch_semaphore_signal(_lock);
     // set cgPath and cgPathBox
     if (container.path == nil && container.exclusionPaths.count == 0) {
         CGRect rect = (CGRect) {CGPointZero, container.size };
+        if (needFixLayoutSizeBug) {
+            constraintSizeIsExtended = YES;
+            constraintRectBeforeExtended = UIEdgeInsetsInsetRect(rect, container.insets);
+            constraintRectBeforeExtended = CGRectStandardize(constraintRectBeforeExtended);
+            if (container.isVerticalForm) {
+                rect.size.width = LFTextContainerMaxSize.width;
+            } else {
+                rect.size.height = LFTextContainerMaxSize.height;
+            }
+        }
         rect = UIEdgeInsetsInsetRect(rect, container.insets);
         rect = CGRectStandardize(rect);
         cgPathBox = rect;
@@ -521,6 +541,19 @@ dispatch_semaphore_signal(_lock);
         
         LFTextLine *line = [LFTextLine lineWithCTLine:ctLine position:position vertical:isVerticalForm];
         CGRect rect = line.bounds;
+        
+        if (constraintSizeIsExtended) {
+            if (isVerticalForm) {
+                if (rect.origin.x + rect.size.width >
+                    constraintRectBeforeExtended.origin.x +
+                    constraintRectBeforeExtended.size.width) break;
+            } else {
+                if (rect.origin.y + rect.size.height >
+                    constraintRectBeforeExtended.origin.y +
+                    constraintRectBeforeExtended.size.height) break;
+            }
+        }
+        
         BOOL newRow = YES;
         if (rowMaySeparated && position.x != lastPosition.x) {
             if (isVerticalForm) {
